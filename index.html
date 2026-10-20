@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chá da Laura 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --rose-primary: #ffb6c1;
+            --rose-light: #fff0f3;
+            --rose-dark: #d87093;
+            --rose-accent: #e06d88;
+            --nude-bg: #fdfbf7;
+            --text-color: #6d5b5b;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--nude-bg);
+            color: var(--text-color);
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        .phone-container {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            background-color: var(--white);
+            box-shadow: 0 0 25px rgba(216, 112, 147, 0.15);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+            padding: 40px 20px 30px;
+            text-align: center;
+            position: relative;
+            border-bottom-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+        }
+
+        .hero-image-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 15px;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 12px rgba(0,0,0,0.08));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: var(--rose-dark);
+            font-weight: 500;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        h1.title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.8rem;
+            color: var(--rose-dark);
+            margin: 5px 0 10px;
+            line-height: 1;
+        }
+
+        .parents-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #8c7373;
+            margin-bottom: 20px;
+        }
+
+        .welcome-text {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #7d6868;
+            padding: 0 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--rose-accent);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 6px 15px rgba(224, 109, 136, 0.35);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:active {
+            transform: scale(0.96);
+        }
+
+        .info-section {
+            padding: 35px 25px;
+            flex: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--rose-dark);
+            margin-bottom: 25px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '💕';
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .info-card {
+            background-color: var(--rose-light);
+            border-radius: 20px;
+            padding: 22px;
+            margin-bottom: 20px;
+            border: 1px dashed rgba(216, 112, 147, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-icon {
+            width: 45px;
+            height: 45px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--rose-dark);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .info-content h3 {
+            font-size: 0.85rem;
+            color: #9c8282;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .info-content p {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #594545;
+            line-height: 1.4;
+        }
+
+        .gift-card {
+            background: linear-gradient(135deg, #fff 0%, #fff9fb 100%);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #fce4ec;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-bottom: 30px;
+        }
+
+        .gift-card h3 {
+            font-size: 0.95rem;
+            color: var(--rose-dark);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .gift-card p {
+            font-size: 0.95rem;
+            color: #735d5d;
+            font-style: italic;
+        }
+
+        .rsvp-section {
+            background-color: #fff5f7;
+            padding: 35px 25px;
+            border-top-left-radius: 35px;
+            border-top-right-radius: 35px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.03);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #735d5d;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #f0d1d8;
+            border-radius: 12px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 0.95rem;
+            background-color: var(--white);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--rose-dark);
+            box-shadow: 0 0 0 3px rgba(216, 112, 147, 0.15);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .radio-option {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid #f0d1d8;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .radio-option input {
+            accent-color: var(--rose-dark);
+        }
+
+        .btn-submit {
+            width: 100%;
+            margin-top: 10px;
+            background-color: var(--rose-dark);
+        }
+
+        .success-message {
+            display: none;
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid #f0d1d8;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-message i {
+            font-size: 2.5rem;
+            color: var(--rose-dark);
+            margin-bottom: 12px;
+        }
+
+        .success-message h3 {
+            font-size: 1.3rem;
+            color: var(--rose-dark);
+            margin-bottom: 8px;
+        }
+
+        .success-message p {
+            font-size: 0.95rem;
+            color: #735d5d;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #a89090;
+            background-color: #fff5f7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-container">
+        
+        <header class="hero-section">
+            <div class="hero-image-container">
+                <svg viewBox="0 0 200 200" width="100%" height="100%">
+                    <circle cx="100" cy="90" r="55" fill="#fff5f5" opacity="0.6"/>
+                    <ellipse cx="85" cy="50" rx="18" ry="22" fill="#ffb6c1"/>
+                    <ellipse cx="115" cy="45" rx="16" ry="20" fill="#ffd1dc"/>
+                    <ellipse cx="100" cy="32" rx="14" ry="18" fill="#fff"/>
+                    <line x1="85" y1="72" x2="100" y2="105" stroke="#b09e9e" stroke-width="1"/>
+                    <line x1="115" y1="65" x2="100" y2="105" stroke="#b09e9e" stroke-width="1"/>
+                    <line x1="100" y1="50" x2="100" y2="105" stroke="#b09e9e" stroke-width="1"/>
+                    <circle cx="100" cy="115" r="28" fill="#d2a679"/>
+                    <circle cx="82" cy="98" r="10" fill="#d2a679"/>
+                    <circle cx="118" cy="98" r="10" fill="#d2a679"/>
+                    <circle cx="82" cy="98" r="6" fill="#f4cccc"/>
+                    <circle cx="118" cy="98" r="6" fill="#f4cccc"/>
+                    <ellipse cx="100" cy="122" rx="10" ry="8" fill="#faebd7"/>
+                    <circle cx="100" cy="120" r="3" fill="#594545"/>
+                    <path d="M 97 124 Q 100 127 103 124" stroke="#594545" stroke-width="1.5" fill="none"/>
+                    <circle cx="91" cy="110" r="2.5" fill="#594545"/>
+                    <circle cx="109" cy="110" r="2.5" fill="#594545"/>
+                    <path d="M 75 90 Q 70 82 78 85 Q 85 88 80 94 Z" fill="#ff69b4"/>
+                    <path d="M 70 90 Q 65 95 72 96 Q 78 98 75 92 Z" fill="#ff69b4"/>
+                    <circle cx="75" cy="91" r="3" fill="#ff1493"/>
+                    <path d="M 90 138 Q 80 130 92 136 Z" fill="#ff69b4"/>
+                    <path d="M 110 138 Q 120 130 108 136 Z" fill="#ff69b4"/>
+                    <circle cx="100" cy="137" r="4" fill="#ff1493"/>
+                </svg>
+            </div>
+            
+            <p class="tagline">Mal posso esperar para te conhecer! 💕</p>
+            <h1 class="title">Chá da Laura</h1>
+            <p class="parents-name">Noemi & Wagner</p>
+            
+            <p class="welcome-text">
+                Estamos esperando você para celebrar a chegada da nossa pequena Laura! Será um momento muito especial e cheio de carinho.
+            </p>
+
+            <a href="#rsvp" class="btn-primary">Confirmar presença</a>
+        </header>
+
+        <section class="info-section">
+            <h2 class="section-title">Informações do Evento</h2>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Data</h3>
+                    <p>Sábado, 14 de Novembro</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fa-regular fa-clock"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Horário</h3>
+                    <p>Início: 15h</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="info-content">
+                    <h3>Local e Endereço</h3>
+                    <p>Rua Senhorinha Deolinda de Freitas, 288<br>Santa Isabel</p>
+                    <p style="font-size: 0.85rem; color: #a67c7c; margin-top: 4px; font-weight: normal;">(Casa da minha amiga tec. Camila)</p>
+                </div>
+            </div>
+
+            <div class="gift-card">
+                <h3>Sugestão de Presente 💕</h3>
+                <p>Fraldas, mimos ou roupinhas com muito amor para a Laura.</p>
+            </div>
+        </section>
+
+        <section class="rsvp-section" id="rsvp">
+            <h2 class="section-title" style="margin-bottom: 20px;">Confirme sua presença 💕</h2>
+
+            <form id="rsvp-form">
+                <div class="form-group">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp / Telefone</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" class="form-control" placeholder="(00) 00000-0000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pessoas">Quantidade de pessoas</label>
+                    <input type="number" id="pessoas" name="pessoas" class="form-control" value="1" min="1" max="10" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirmação</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="status" value="Sim, estarei presente" checked>
+                            Sim, estarei
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="status" value="Não poderei comparecer">
+                            Não poderei
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="observacao">Observação opcional (Ex: Alergias, recado para os pais)</label>
+                    <textarea id="observacao" name="observacao" class="form-control" rows="2" placeholder="Deixe um recado carinhoso..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary btn-submit" id="submit-btn">Enviar Confirmação</button>
+            </form>
+
+            <div class="success-message" id="success-box">
+                <i class="fa-solid fa-face-smile-beam"></i>
+                <h3>Presença confirmada!</h3>
+                <p>A Noemi e o Wagner agradecem muito pelo carinho. Será muito especial ter você com a gente nesse momento! 💕</p>
+            </div>
+        </section>
+
+        <footer>
+            Chá da Laura • Feito com muito amor 💕
+        </footer>
+
+    </div>
+
+    <script>
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzK02R5SCbxQhEJlWf0Mefp4p4QYTWyOBmmtFMRXH2WVx8EIyyo5H3IpSZ0Ot9hhOPK/exec"; 
+
+        const form = document.getElementById('rsvp-form');
+        const successBox = document.getElementById('success-box');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Enviando...";
+
+            const formData = {
+                dataHora: new Date().toLocaleString('pt-BR'),
+                nome: document.getElementById('nome').value,
+                whatsapp: document.getElementById('whatsapp').value,
+                pessoas: document.getElementById('pessoas').value,
+                status: document.querySelector('input[name="status"]:checked').value,
+                observacao: document.getElementById('observacao').value || 'Nenhuma'
+            };
+
+            if (WEB_APP_URL && WEB_APP_URL !== "SUA_URL_DO_GOOGLE_APPS_SCRIPT_AQUI") {
+                fetch(WEB_APP_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                }).then(() => {
+                    mostrarSucesso();
+                }).catch(() => {
+                    mostrarSucesso();
+                });
+            } else {
+                setTimeout(() => {
+                    mostrarSucesso();
+                }, 800);
+            }
+        });
+
+        function mostrarSucesso() {
+            form.style.display = 'none';
+            successBox.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
